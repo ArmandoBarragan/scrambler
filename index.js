@@ -26,7 +26,7 @@ function scramble(inputId, outputId) {
     var sentence = document.getElementById(inputId).value;
     matrix = decideMatrix(inputId);
     addSpaces(sentence);
-    vectors = createVectors(sentence);
+    vectors = createVectors(sentence);    
     scrambledVectors = multiplySentenceVectors(vectors, matrix);
     finalSentence = createNewSentence(scrambledVectors);
     var output = document.getElementById(outputId);
@@ -68,7 +68,9 @@ function addSpaces(sentence) {
 function multiplySentenceVectors(vectors, matrix) {
     newVectorArray = [];
     for (i in vectors) {
-        vector = vectors.pop();
+        console.log(i)
+        vector = vectors[i];
+        console.log(vector)
         vector = multiplyVector(vector, matrix);
         newVectorArray.push(vector);
     }
@@ -80,7 +82,7 @@ function multiplyVector(vector, matrix) {
     for (i in vector) {
         component = 0        
         for (j in vector) {
-            component += vector[i] * matrix[i][j];
+            component += vector[j] * matrix[i][j];
         }
         newVector.push(component);
     }

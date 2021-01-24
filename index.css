@@ -23,8 +23,12 @@ button{
     margin: 5px;
     padding: 0;
     background-color: #38A3A5;
-    border: solid 1px #29274C;
+    box-shadow: none;
     color: #F5EDF0;
+}
+button:hover{
+    background-color: #57C1C7;
+    /* color: black; */
 }
 
 p{
